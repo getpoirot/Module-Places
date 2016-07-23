@@ -5,20 +5,15 @@ use Module\Categories\Model\Repository;
 
 use Module\MongoDriver\Services\aServiceRepository;
 
-/*
-$categories = $services->fresh(
-    '/module/categories/services/repository/categories'
-    , ['db_collection' => 'trades.categories'] // override options
-);
-$r = $categories->getTree($categories->findByID('red'));
-*/
-
 class ServiceRepositoryPlaces
     extends aServiceRepository
 {
+    const CONF_KEY = 'places-repository';
+    
     /** @var string Service Name */
     protected $name = 'places';
 
+    protected $default_collection = 'places';
 
     /**
      * Repository Class Name
@@ -39,6 +34,6 @@ class ServiceRepositoryPlaces
      */
     function getMergedConfKey()
     {
-        return \Module\Places\Module::CONF_KEY;
+        return self::CONF_KEY;
     }
 }
