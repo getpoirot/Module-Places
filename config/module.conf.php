@@ -1,10 +1,15 @@
 <?php
 return array(
     Module\MongoDriver\Module::CONF_KEY => array(
-        \Module\Places\Services\ServiceRepositoryPlaces::CONF_KEY => array(
-            'collections' => array(
-                // query on which collection
-                'places' => array(
+        'repositories' => array(
+            // Configuration of Repository Service.
+            // Usually Implemented with modules that implement mongo usage
+            // with specific key name as repo name.
+            // @see aServiceRepository bellow
+            \Module\Places\Services\ServiceRepositoryPlaces::class => array(
+                'collection' => array(
+                    // query on which collection
+                    'name' => 'places',
                     // which client to connect and query with
                     'client' => \Module\MongoDriver\MongoDriverManagementFacade::CLIENT_DEFAULT,
                     // ensure indexes

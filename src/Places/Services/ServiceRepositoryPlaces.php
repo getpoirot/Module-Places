@@ -13,8 +13,6 @@ class ServiceRepositoryPlaces
     /** @var string Service Name */
     protected $name = 'places';
 
-    protected $default_collection = 'places';
-
     /**
      * Repository Class Name
      *   Module\Categories\Model\Repository\Categories
@@ -24,16 +22,5 @@ class ServiceRepositoryPlaces
     function getRepoClassName()
     {
         return \Module\Places\Model\Repository\Places::class;
-    }
-
-    /**
-     * Get Key Of Merged Config To Retrieve Settings
-     *  \Module\Categories\Module::CONF_KEY
-     *
-     * @return string
-     */
-    function getMergedConfKey()
-    {
-        return self::CONF_KEY;
     }
 }
