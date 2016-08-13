@@ -11,7 +11,7 @@ return array(
                     // query on which collection
                     'name' => 'places',
                     // which client to connect and query with
-                    'client' => \Module\MongoDriver\MongoDriverManagementFacade::CLIENT_DEFAULT,
+                    'client' => \Module\MongoDriver\Module\MongoDriverManagementFacade::CLIENT_DEFAULT,
                     // ensure indexes
                     'indexes' => array(
                         array('key' => array('geometry.location' => '2dsphere')),
