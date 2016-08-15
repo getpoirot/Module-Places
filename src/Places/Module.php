@@ -11,16 +11,16 @@ use Poirot\Router\BuildRouterStack;
 use Poirot\Router\Interfaces\iRouterStack;
 use Poirot\Std\Interfaces\Struct\iDataEntity;
 
-use Poirot\Application\Sapi;
+use Poirot\Application\Interfaces\Sapi;
 use Poirot\Application\Interfaces\Sapi\iSapiModule;
 
 
 class Module implements iSapiModule
-    , Sapi\Module\Feature\FeatureModuleAutoload
-    , Sapi\Module\Feature\FeatureModuleMergeConfig
-    , Sapi\Module\Feature\FeatureModuleInitModuleManager
-    , Sapi\Module\Feature\FeatureModuleNestServices
-    , Sapi\Module\Feature\FeatureOnPostLoadModulesGrabServices
+    , Sapi\Module\Feature\iFeatureModuleAutoload
+    , Sapi\Module\Feature\iFeatureModuleMergeConfig
+    , Sapi\Module\Feature\iFeatureModuleInitModuleManager
+    , Sapi\Module\Feature\iFeatureModuleNestServices
+    , Sapi\Module\Feature\iFeatureOnPostLoadModulesGrabServices
 {
     CONST CONF_KEY = 'module.places';
 
